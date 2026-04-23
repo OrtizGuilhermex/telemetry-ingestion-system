@@ -1,0 +1,8 @@
+{
+  "sensorId": "TEMP-01",
+  "estacao": "WEG-VRE",
+  "tipoMedicao": "temperatura",
+  "valor": 25.5,
+  "unidade": "Celsius"
+}
+
