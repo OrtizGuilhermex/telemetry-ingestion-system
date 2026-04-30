@@ -1,0 +1,31 @@
+server:
+  port: 8082
+
+spring:
+  application:
+    name: data-storage-service
+  
+  kafka:
+    consumer:
+      bootstrap-servers: localhost:9094
+      group-id: data-storage-group
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.ErrorHandlingDeserializer
+      properties:
+        spring.deserializer.value.delegate.class: org.springframework.kafka.support.serializer.JsonDeserializer
+        spring.json.trusted.packages: '*'
+        spring.json.value.default.type: com.ctw.data_storage_service.model.SensorLeituraEvent
+        spring.jackson.serialization.write-dates-as-timestamps: false
+
+influx:
+  url: http://localhost:8086
+  token: meu-token-super-secreto
+  org: weg
+  bucket: sensores
+
+logging:
+  level:
+    root: INFO
+    org.springframework.kafka: WARN
+    com.ctw: DEBUG
