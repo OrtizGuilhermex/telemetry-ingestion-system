@@ -102,4 +102,4 @@ Para testar a integração, envie o seguinte JSON via Kafka UI no tópico `produ
 
 ---
 
-> Desenvolvido para fins educacionais — **SENAI AI MIDS 2024/2**
+> Desenvolvido para fins educacionais — **SENAI MIDS 78 2024/2**
